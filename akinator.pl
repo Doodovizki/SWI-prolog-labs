@@ -44,6 +44,7 @@ magic(razdor,0).
 magic(ivan,0).
 magic(zadara,0).
 magic(all,0).
+magic(legion,0).
 magic(rabin,0).
 magic(averiy,0).
 magic(frank,1).
@@ -101,16 +102,16 @@ rich(archi,1).
 rich(phill,0).
 rich(drake,0).
 rich(henry,1).
-rich(sher,0).
+rich(sher,1).
 rich(govard,1).
 rich(razdor,1).
-rich(ivan,0).
+rich(ivan,1).
 rich(zadara,0).
 rich(all,0).
 rich(legion,0).
 rich(rabin,0).
 rich(averiy,1).
-rich(framk,1).
+rich(frank,1).
 rich(marty,0).
 rich(tanya,1).
 rich(ricardo,1).
@@ -177,7 +178,7 @@ drink(frank,1).
 drink(marty,1).
 drink(tanya,0).
 drink(ricardo,0).
-drink(dub,0).
+drink(dub,1).
 drink(kelvin,0).
 drink(horse,0).
 drink(king,1).
@@ -195,9 +196,9 @@ buissness(mick,0).
 buissness(archi,0).
 buissness(phill,1).
 buissness(drake,0).
-buissness(henry,0).
+buissness(henry,1).
 buissness(sher,0).
-buissness(govard,0).
+buissness(govard,1).
 buissness(razdor,0).
 buissness(ivan,0).
 buissness(zadara,0).
@@ -230,6 +231,7 @@ fight(drake,1).
 fight(henry,1).
 fight(sher,1).
 fight(govard,1).
+fight(razdor,1).
 fight(ivan,1).
 fight(zadara,0).
 fight(all,0).
@@ -257,7 +259,7 @@ ch_name(gustav,0).
 ch_name(mick,0).
 ch_name(archi,1).
 ch_name(phill,0).
-ch_name(drake,0).
+ch_name(drake,1).
 ch_name(henry,0).
 ch_name(sher,0).
 ch_name(govard,1).
@@ -272,7 +274,7 @@ ch_name(frank,0).
 ch_name(marty,0).
 ch_name(tanya,0).
 ch_name(ricardo,0).
-ch_name(dub,0).
+ch_name(dub,1).
 ch_name(kelvin,0).
 ch_name(horse,0).
 ch_name(king,1).
@@ -326,7 +328,7 @@ question9(X9):- write("Have your character ever changed his name in life?"),nl,
                                 write("0, NO"),nl,
                                 read(X9).
 
-pr:- question1(X1),question2(X2),question3(X3),question4(X4),question5(X5),question6(X6),question7(X7),question8(X8),question9(X9),
+akin:- question1(X1),question2(X2),question3(X3),question4(X4),question5(X5),question6(X6),question7(X7),question8(X8),question9(X9),
     mediv(X,X1),magic(X,X2),god(X,X3),rich(X,X4),evil(X,X5),drink(X,X6),buissness(X,X7),fight(X,X8),ch_name(X,X9),
     write(X).
-pr:-
+

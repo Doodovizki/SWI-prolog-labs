@@ -8,6 +8,11 @@ man(sergei).
 man(vladimir).
 man(gleb).
 
+man(vadim).
+man(vano).
+man(kirill).
+man(boris).
+
 woman(anna).
 woman(maria).
 woman(fatima).
@@ -15,6 +20,11 @@ woman(galina).
 woman(viktoria).
 woman(valeria).
 woman(tatyana).
+
+woman(ekaterina).
+woman(elizaveta).
+woman(svetlana).
+woman(zlata).
 
 parent(mikhail,petr).
 parent(mikhail,galina).
@@ -41,6 +51,15 @@ parent(viktoria,valeria).
 parent(gleb,tatyana).
 parent(valeria,tatyana).
 
+parent(svetlana,maria).
+parent(vadim,maria).
+
+parent(kirill,viktoria).
+parent(ekaterina,viktoria).
+
+parent(elizaveta,gleb).
+parent(boris,gleb).
+
 men():-man(X),write(X),nl,fail.
 children(X):-parent(X,Y),write(Y),nl,fail.
 
@@ -59,7 +78,6 @@ brothers(X):-brother(Y,X),write(Y),nl,fail.
 wife(X,Y):-parent(Y,Z),mother(X,Z).
 
 b_s(X,Y):-mother(A,X),mother(A,Y),woman(Y),X\=Y.
-b_s(X,Y):-mother(A,X),mother(A,Y),woman(X),X\=Y.
 
 b_s(X):-b_s(Y,X),write(Y),nl,fail.
 
@@ -80,6 +98,11 @@ grand_ma_and_da(X,Y):-parent(Z,X),parent(Y,Z),woman(X),woman(Y).
 uncle(X,Y):-parent(Z,Y),b_s(Z,X),man(X).
 uncles(X):-uncle(Y,X),write(Y),nl,fail.
 
-nephey(X,Y):-parent(Z,Y),b_s(X,Z),man(Y).
+aunt(X,Y):-parent(Z,Y),b_s(Z,X),woman(X).
+aunts(X):-uncle(Y,X),write(Y),nl,fail.
+
+nephey(X,Y):-aunt(Y,X),man(X).
 nepheys(X):-nephey(Y,X),write(Y),nl,fail.
+nephey(X,Y):-uncle(Y,X),man(X).
+
 
